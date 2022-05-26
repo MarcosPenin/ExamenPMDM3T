@@ -5,4 +5,11 @@ import androidx.lifecycle.ViewModel
 
 class MusicViewModel : ViewModel() {
     var genre = MutableLiveData("")
+    var listadoDiscos=MutableLiveData(getAll())
+
+
+
+
+
+
 }

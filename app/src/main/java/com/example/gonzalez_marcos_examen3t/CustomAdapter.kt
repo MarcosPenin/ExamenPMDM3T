@@ -2,12 +2,14 @@ package com.example.gonzalez_marcos_examen3t
 
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonzalez_marcos_examen3t.databinding.ItemSongBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.withContext
 
 
@@ -22,6 +24,7 @@ class CustomAdapter(val listadoDatos: MutableList<DataSource>) : RecyclerView.Ad
         val info = binding.info
         val remove = binding.remove
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
         ItemSongBinding.inflate(
@@ -47,6 +50,7 @@ class CustomAdapter(val listadoDatos: MutableList<DataSource>) : RecyclerView.Ad
                 notifyItemRemoved(position)
                 notifyItemRangeChanged(position, listadoDatos.size)
             }
+
 
         }
     }

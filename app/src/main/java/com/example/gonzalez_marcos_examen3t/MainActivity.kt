@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -50,7 +51,6 @@ class MainActivity : AppCompatActivity() {
            mView es el binding.root
     */
     }
-
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
