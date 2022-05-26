@@ -5,14 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonzalez_marcos_examen3t.databinding.ItemSongBinding
 
 
 class CustomAdapter(val listadoDatos: MutableList<DataSource>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
-
-
 
     class ViewHolder(binding:ItemSongBinding) : RecyclerView.ViewHolder(binding.root) {
         val mView = binding.root

@@ -31,7 +31,7 @@ class SongFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_song, container, false)
         _binding = FragmentSongBinding.inflate(inflater, container, false)
-        return binding.root
+        //return binding.root
 
     }
 
@@ -39,7 +39,7 @@ class SongFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var titulo = SongFragmentArgs.fromBundle(requireArguments()).titulo
 
-        //ESTO ROMPE Y NO ENTIENDO PQ
+        //ESTO ROMPE Y NO ENTIENDO PQ. El valor llega bien, pero rompe cuando intenta setearlo
         //binding.titulo.text = titulo
 
 
