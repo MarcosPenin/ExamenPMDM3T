@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.gonzalez_marcos_examen3t.databinding.FragmentMenuBinding
@@ -30,10 +32,32 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
-    }
+        binding.spinner
+            .apply {
+                setSelection(0, false)
+                adapter = ArrayAdapter.createFromResource(
+                    requireContext(),
+                    R.array.generos,
+                    R.layout.item_menu
+                )
+                onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                        when (position) {
+                            1 -> viewModel.listadoDiscos.postValue(getRock())
+                            2 -> viewModel.listadoDiscos.postValue(getBlues())
+                            3 -> viewModel.listadoDiscos.postValue(getRock())
+                        }
+                        if(position>0){
+                            findNavController().navigate(MenuFragmentDirections.actionMenuFragmentToSongListFragment())
+                        }
+                        setSelection (0, false)
+                    }
+                    override fun onNothingSelected(parent: AdapterView<*>?) {}
+                    }
+
+                }
+            }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

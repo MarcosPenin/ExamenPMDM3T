@@ -37,13 +37,13 @@ class MainActivity : AppCompatActivity() {
         navHostFragment=supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         navController= navHostFragment.navController
 
-        /*
+
         appBarConfiguration = AppBarConfiguration(
             setOf(  // Los que pasamos son los que se consideran top-level (no se muestra el icono "atrás"
-                R.id.menu,
-            ),binding.root
+                R.id.menu_fragment,
+            )
         )
-
+/*
         Snackbar.make(mView, info, Snackbar.LENGTH_SHORT).setAction("Info",
             View.OnClickListener {
                 //aqui cosas nazis

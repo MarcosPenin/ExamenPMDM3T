@@ -3,26 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/menu_fragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/menu_fragment"
         android:name="com.example.gonzalez_marcos_examen3t.MenuFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_menu">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_menu_fragment_to_songListFragment"
+            app:destination="@id/songListFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.gonzalez_marcos_examen3t.SongsFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_songs">
+        tools:layout="@layout/fragment_songs"/>
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+    <fragment
+        android:id="@+id/songListFragment"
+        android:name="com.example.gonzalez_marcos_examen3t.SongListFragment"
+        android:label="fragment_song_list"
+        tools:layout="@layout/fragment_song_list" />
 </navigation>
