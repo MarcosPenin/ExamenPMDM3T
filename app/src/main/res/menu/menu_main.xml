@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.recyclingviewlearning.MainActivity" >
     <item android:id="@+id/info"
-        android:title=""
+        android:title="Reset"
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_dialog_info"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 </menu>

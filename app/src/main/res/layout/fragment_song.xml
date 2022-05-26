@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SongFragment">
+    tools:context=".SongFragment"
+    android:background="#BD5F58"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/disco"
+        android:layout_width="182dp"
+        android:layout_height="197dp"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        tools:srcCompat="@drawable/disco" />
+
+    <Button
+        android:id="@+id/eliminar"
+        android:layout_width="185dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="28dp"
+        android:text="ELIMINAR"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/descripcion"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="269dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/disco">
 
-</FrameLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="339dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="48dp"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:text="ESTO NO DEBERÍA ESTAR AQUÍ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

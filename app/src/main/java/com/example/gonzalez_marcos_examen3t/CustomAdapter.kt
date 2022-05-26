@@ -2,22 +2,20 @@ package com.example.gonzalez_marcos_examen3t
 
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gonzalez_marcos_examen3t.databinding.ItemSongBinding
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.withContext
 
 
 class CustomAdapter(val listadoDatos: MutableList<DataSource>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
 
+
     class ViewHolder(binding:ItemSongBinding) : RecyclerView.ViewHolder(binding.root) {
-        //val mView = binding.root
+        val mView = binding.root
         val titulo = binding.titulo
         val autor = binding.autor
         val portada= binding.portada
@@ -33,15 +31,21 @@ class CustomAdapter(val listadoDatos: MutableList<DataSource>) : RecyclerView.Ad
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
         holder.apply {
             titulo.text = listadoDatos[position].titulo
             autor.text = listadoDatos[position].autor
             val descripcion=listadoDatos[position].descripcion
 
             portada.setImageResource(listadoDatos[position].imagen)
-            info.setOnClickListener{
+            info.setOnClickListener {
                 AlertDialog.Builder(it.context).setMessage(descripcion)
                     .setTitle(titulo.text).create().show()
+            }
+            mView.setOnClickListener{
+                var titulo=listadoDatos[position].titulo
+                var descripcion=listadoDatos[position].descripcion
+                it.findNavController().navigate(SongListFragmentDirections.actionSongListFragmentToSongFragment(titulo,descripcion))
 
             }
 
@@ -54,7 +58,6 @@ class CustomAdapter(val listadoDatos: MutableList<DataSource>) : RecyclerView.Ad
 
         }
     }
-
 
 
     override fun getItemCount(): Int = listadoDatos.size
